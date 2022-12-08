@@ -1,0 +1,36 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+  "name": "Ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:1": {},
+    "ghcr.io/devcontainers/features/docker-from-docker:1": {},
+    "ghcr.io/devcontainers/features/go:1": {},
+    "ghcr.io/devcontainers/features/java:1": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/terraform:1": {},
+    "ghcr.io/devcontainers-contrib/features/vault-asdf:1": {},
+    "ghcr.io/devcontainers-contrib/features/vue-cli:1": {},
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:0": {},
+    "ghcr.io/dhoeric/features/opa:1": {},
+    "ghcr.io/guiyomh/features/golangci-lint:0": {},
+    "ghcr.io/guiyomh/features/goreleaser:0": {},
+    "ghcr.io/guiyomh/features/gotestsum:0": {},
+    "ghcr.io/guiyomh/features/mage:0": {},
+    "ghcr.io/lukewiwa/features/shellcheck:0": {}
+  },
+
+  // Run devtools installer script after container is created.
+  "postCreateCommand": "bash scripts/install-dev-tools.sh",
+
+  // Start redis in server mode locally
+  "postStartCommand": "redis-server &"
+
+  // "shutdownAction": "bash scripts/shutdown.sh",
+
+  // Configure tool-specific properties.
+  // "customizations": {},
+}
